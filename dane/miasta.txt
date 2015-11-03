@@ -1,0 +1,7 @@
+# miasta
+0 Radom
+1 Warszawa
+2 Olsztyn
+3 Suwalki
+4 Opole
+5 Bydgoszcz

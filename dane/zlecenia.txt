@@ -1,0 +1,7 @@
+3
+001 3 0 Laptop dla point. Kowalskiego 40
+002 3 2 Robot dla NASA 100
+003 3 0 Paczka indeksow dla PW 0 
+004 3 1 Pudelka dla IKEA 20
+005 3 0 Pudelka dla IKEA 50
+006 3 2 Pudelka dla IKEA 20
