@@ -1,5 +1,6 @@
 package com.company;
 
+import exceptions.WrongDataFormatException;
 import gui.DrawPanel;
 import gui.MainForm;
 
@@ -60,7 +61,11 @@ public class Controller {
 //        String associationsPath = r.readFromConsole("Podaj ścieżkę do pliku opisującego mapę: ");
 //        String packagesPath = r.readFromConsole("Podaj ścieżkę do pliku z paczkami: ");
 
-        cities = r.loadCities(citiesPath);
+        try {
+            cities = r.loadCities(citiesPath);
+        } catch (WrongDataFormatException e) {
+            System.err.println(e.getMessage());
+        }
         r.loadAssociations(associationsPath, cities);
 
         startCityId = r.getStartCityId(associationsPath);

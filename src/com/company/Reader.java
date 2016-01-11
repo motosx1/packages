@@ -1,5 +1,7 @@
 package com.company;
 
+import exceptions.WrongDataFormatException;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -12,7 +14,7 @@ import java.util.List;
  */
 public class Reader {
 
-    public List<City> loadCities(String path) {
+    public List<City> loadCities(String path) throws WrongDataFormatException{
         BufferedReader br = null;
         List<City> cities = new ArrayList<City>();
 
@@ -28,12 +30,12 @@ public class Reader {
                     for (int i = 2; i < sCurrentLine.split(" ").length; i++)
                         name += " " + sCurrentLine.split(" ")[i];
                     if (isAlreadyExisting(new City(id, name), cities)) {
-                        // throw miasto z takim samym id juz istnieje
+                        throw new WrongDataFormatException("The city "+ name +" with id "+ id +" already exists.");
                     } else {
                         if ((savedId++) + 1 == id) {
                             cities.add(new City(id, name));
                         } else {
-                            // throw niepoprawny format danych
+                            throw new WrongDataFormatException("Wrong Data Format in file with cities.");
                         }
                     }
                 }
