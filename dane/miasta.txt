@@ -5,3 +5,4 @@
 3 Suwalki
 4 Opole
 5 Bydgoszcz
+6 Gdansk
